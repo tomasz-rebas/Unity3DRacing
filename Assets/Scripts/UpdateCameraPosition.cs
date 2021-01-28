@@ -7,8 +7,7 @@ public class UpdateCameraPosition : MonoBehaviour
     private GameObject player;
     private Transform playerTransform;
     public Transform cameraTransform;
-    public float yOffset = 1.14f;
-    public float zOffset = -4.39f;
+    public Vector3 offset = new Vector3(0, 1f, -5f);
 
     void Start()
     {
@@ -18,10 +17,6 @@ public class UpdateCameraPosition : MonoBehaviour
 
     void Update()
     {
-        cameraTransform.position = new Vector3(
-            playerTransform.position.x,
-            playerTransform.position.y + yOffset,
-            playerTransform.position.z + zOffset
-        );
+        cameraTransform.position = playerTransform.position + offset;
     }
 }
